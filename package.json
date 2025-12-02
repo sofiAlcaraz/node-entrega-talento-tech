@@ -11,8 +11,9 @@
     "url": "git+https://github.com/sofiAlcaraz/node-entrega-talento-tech.git"
   },
   "keywords": [],
+  "type": "module",
   "author": "Alcaraz Sofía",
-  "license": "module",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sofiAlcaraz/node-entrega-talento-tech/issues"
   },
