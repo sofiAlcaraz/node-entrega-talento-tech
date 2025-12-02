@@ -1,0 +1,28 @@
+{
+  "name": "entrega-talento-tech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofiAlcaraz/node-entrega-talento-tech.git"
+  },
+  "keywords": [],
+  "author": "Alcaraz Sofía",
+  "license": "module",
+  "bugs": {
+    "url": "https://github.com/sofiAlcaraz/node-entrega-talento-tech/issues"
+  },
+  "homepage": "https://github.com/sofiAlcaraz/node-entrega-talento-tech#readme",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.0",
+    "firebase": "^12.6.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
