@@ -19,6 +19,6 @@ export const login = async (email, username, password) => {
     }
     return snapshot.docs[0].data();
   } catch (error) {
-    console.error("Error en el login: ", error);
+    console.error("Login error: ", error);
   }
 };
