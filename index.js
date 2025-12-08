@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import productsRouter from "./src/routes/products.routes.js";
 import authRouter from "./src/routes/auth.routes.js";
+import usersRouter from "./src/routes/users.routes.js";
 import { authentication } from "./src/middleware/authentication.js";
 
 const app = express();
@@ -12,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json()); // middleware para interpretar los body de las peticiones en formato JSON
 
 const corsOptions = {
-  origin: ["/api/products", "/auth/login"],
+  origin: ["/api/products", "/auth/login", "/api/users"],
   methods: "GET,HEAD,PUT,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
   credentiels: true,
@@ -20,6 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions)); // para habilitar las peticiones de origen cruzado Front
 
 app.use("/auth/login", authRouter);
+app.use("/api/users", usersRouter);
 
 app.use(authentication);
 
