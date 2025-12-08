@@ -17,11 +17,11 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   credentiels: true,
 };
-app.use(cors(corsOptions)); // para habilitar las peticiones de origen cruzado
-
-app.use(authentication);
+app.use(cors(corsOptions)); // para habilitar las peticiones de origen cruzado Front
 
 app.use("/auth/login", authRouter);
+
+app.use(authentication);
 
 //Rutas
 app.use("/api/products", productsRouter);
