@@ -13,10 +13,11 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json()); // middleware para interpretar los body de las peticiones en formato JSON
 
 const corsOptions = {
-  origin: ["/api/products", "/auth/login", "/api/users"],
+  origin: "http://localhost:5173",
   methods: "GET,HEAD,PUT,POST,DELETE",
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentiels: true,
+  allowedHeaders: ["Content-Type", "Authorization", "Range"],
+  exposedHeaders: ["Content-Range"], //Para el front
+  credentials: true,
 };
 app.use(cors(corsOptions)); // para habilitar las peticiones de origen cruzado Front
 

@@ -5,6 +5,7 @@ import {
   doc,
   getDoc,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 import { db } from "../configurations/firebase-configuration.js";
 
@@ -52,6 +53,23 @@ export const deletedProduct = async (id) => {
     return true;
   } catch (error) {
     console.error("Error deleting product: ", error);
+    return false;
+  }
+};
+
+export const editProduct = async (product, id) => {
+  try {
+    const productRef = doc(productsCollection, id);
+
+    await updateDoc(productRef, {
+      name: product.name,
+      state: product.state,
+    });
+  } catch (error) {
+    if (error.code === "not-found") {
+      return "NOT_FOUND";
+    }
+    console.error("Error updating product: ", error);
     return false;
   }
 };

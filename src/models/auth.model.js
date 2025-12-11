@@ -3,11 +3,10 @@ import { db } from "../configurations/firebase-configuration.js";
 
 const userCollection = collection(db, "users");
 
-export const login = async (email, username, password) => {
+export const login = async (username, password) => {
   try {
     const q = query(
       userCollection,
-      where("email", "==", email),
       where("username", "==", username),
       where("password", "==", password)
     );
