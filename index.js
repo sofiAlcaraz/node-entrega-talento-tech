@@ -21,6 +21,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions)); // para habilitar las peticiones de origen cruzado Front
 
+app.get("/", (req, res) => {
+  res.status(200).send("Api funcionando correctamente");
+});
+
 app.use("/auth/login", authRouter);
 app.use("/api/users", usersRouter);
 
